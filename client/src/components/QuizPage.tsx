@@ -6,7 +6,6 @@ import AudioPlayer from "./AudioPlayer";
 import Question from "../question/Question";
 import AnswerInput from "./AnswerInput";
 import Answer from "../question/Answer";
-import RegionDisplay from "./RegionDisplay";
 import RegionList from "./ReigonList";
 
 export interface IQuizPageProps {
