@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import QuizDatabase from "./data/QuizDatabase";
+import "./index.css";
+import { Pane } from "evergreen-ui";
+import PageLookup from "./components/PageLookup";
+import { useState } from "react";
+import { HomePage } from "./pages/HomePage";
+import Page from "./pages/Page";
+
+const homePage = new HomePage(QuizDatabase.quizzes);
 
 function App() {
+  const [page, setPage] = useState<Page>(homePage);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Pane display="flex" flexDirection="column">
+      <Navbar homePage={homePage} setPage={setPage} />
+      <Pane marginX="auto">
+        <PageLookup setPage={setPage} currentPage={page} />
+      </Pane>
+    </Pane>
   );
 }
 
