@@ -17,6 +17,8 @@ export default function QuizCard(props: IQuizCardProps) {
   return (
     <Card
       elevation={1}
+      width="300px"
+      boxSizing="border-box"
       border="default"
       display="flex"
       justifyContent="space-evenly"
@@ -27,7 +29,7 @@ export default function QuizCard(props: IQuizCardProps) {
         {props.quiz.name}
       </Heading>
       <RegionList regions={props.quiz.regions} />
-      <Button onClick={handleClick} appearance="primary" margin="10px">
+      <Button onClick={handleClick} appearance="primary" marginY="25px">
         Practice
       </Button>
     </Card>

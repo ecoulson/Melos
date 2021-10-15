@@ -11,11 +11,12 @@ export interface IHomePageProps {
 export default function HomePage(props: IHomePageProps) {
   return (
     <Pane
-      height="600px"
+      height="300px"
       boxSizing="border-box"
       padding="20px"
-      display="grid"
-      gridTemplateColumns="300px 300px"
+      display="flex"
+      justifyContent="center"
+      flexWrap="wrap"
       gap="20px"
     >
       <QuizList setPage={props.setPage} quizes={props.quizzes} />
